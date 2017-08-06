@@ -90,7 +90,7 @@
 </xsl:template>
 
 <xsl:template match="application">
-    <tr bgcolor="#999999">
+    <tr bgcolor="#081421">
         <td>
             <b><xsl:value-of select="name"/></b>
         </td>
@@ -100,7 +100,7 @@
 </xsl:template>
 
 <xsl:template match="live">
-    <tr bgcolor="#aaaaaa">
+    <tr bgcolor="#777">
         <td>
             <i>live streams</i>
         </td>
