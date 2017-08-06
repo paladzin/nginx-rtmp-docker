@@ -1,0 +1,1 @@
+// Inspired by some other person's idea, but repurposed and reimplemented as a 404 page for my personal website.
