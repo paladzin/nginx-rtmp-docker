@@ -11,9 +11,9 @@ RUN apk --update --no-cache add \
 # Forward logs to Docker
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
-
+# Mounts
 VOLUME ['/etc/nginx']
-
+# Ports
 EXPOSE 1935 80
-
+# Run in the foreground
 CMD ["nginx", "-g", "pid /tmp/nginx.pid; daemon off;"]
