@@ -39,7 +39,7 @@ def publish_stream(filename):
     ret = False
     try:
         #TODO: When is the stream finished or when is it crashed?
-        subprocess.check_output('avconv -re -i {0} -codec copy -f flv {1}'.format(filename, STREAM_DESTINATION).split())
+        subprocess.check_output('ffmpeg -re -i {0} -codec copy -f flv {1}'.format(filename, STREAM_DESTINATION).split())
         ret = False
     except:
         ret = False
@@ -55,10 +55,10 @@ def publish_wait(wait_time):
     Depending on the waiting time, a short outage or 'Problems' or whatever"""
     if wait_time < 10:
         problems_short = BACKUPSTREAM_SHORT
-        subprocess.check_output('avconv -re -i {0} -codec copy -f flv {1}'.format(problems_short, STREAM_DESTINATION).split())
+        subprocess.check_output('ffmpeg -re -i {0} -codec copy -f flv {1}'.format(problems_short, STREAM_DESTINATION).split())
     else:
         problems_big = BACKUPSTREAM_LONG
-        subprocess.check_output('avconv -re -i {0} -codec copy -f flv {1}'.format(problems_big, STREAM_DESTINATION).split())
+        subprocess.check_output('ffmpeg -re -i {0} -codec copy -f flv {1}'.format(problems_big, STREAM_DESTINATION).split())
 
 def get_date_from_file(file_):
     """ nginx saves streams as: test-%s.flv """
