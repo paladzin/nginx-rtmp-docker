@@ -3,6 +3,7 @@ FROM alpine:latest
 
 # Install prerequisites and update certificates
 RUN apk --update --no-cache add \
+      python2 \
       nginx \
       nginx-mod-rtmp \
       ffmpeg && \
